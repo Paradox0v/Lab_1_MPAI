@@ -11,13 +11,15 @@ parser.add_argument('-a','--axis',type=int, default=0)
 parser.add_argument('-r','--result', type=str, required=True)
 args = parser.parse_args()
 
-path1 = '0.jpg'
+# C:/Users/Family/Desktop/Стол/Школа отчаяния.jpg
+# C:/Users/Family/Desktop/Стол/Шарлотта.jpg
+path1 = 'C:/Users/Family/Desktop/Стол/Школа отчаяния.jpg'
 path2 = args.path
 img_dog = imread(path1)
 img_cat = imread(path2)
 
-img_cat = img_cat/np.max(img_cat)
-img_dog = img_dog/np.max(img_dog)
+img_cat = img_cat/255
+img_dog = img_dog/255
 
 img_cat = resize(img_cat, (img_dog.shape[0], img_dog.shape[1]))
 
@@ -58,4 +60,6 @@ fig.add_subplot(2, 3, 6)
 plt.plot(bins_green, hist_green, color='green', linestyle='-', linewidth=1)
 plt.plot(bins_red, hist_red, color='red', linestyle='-', linewidth=1)
 plt.plot(bins_blue, hist_blue, color='blue', linestyle='-', linewidth=1)
+
+plt.tight_layout()
 show()
