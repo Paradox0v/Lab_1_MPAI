@@ -6,5 +6,4 @@
    Капанев Никита Сергеевич
 ---
 Почта <nadgob007@mail.ru>
----
 Почта <kapanevns@gmail.com>
